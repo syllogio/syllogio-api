@@ -1,0 +1,15 @@
+{
+  "name": "syllogio-api",
+  "version": "0.0.0",
+  "description": "A proposition API",
+  "main": "build/index.js",
+  "repository": "git@github.com:syllogio/syllogio-api.git",
+  "author": "Peter Sieg <chasingmaxwell@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gremlin": "^3.4.2"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
+}

@@ -6,6 +6,10 @@
   "repository": "git@github.com:syllogio/syllogio-api.git",
   "author": "Peter Sieg <chasingmaxwell@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./scripts/gremlin.js start",
+    "stop": "node ./scripts/gremlin.js stop"
+  },
   "dependencies": {
     "gremlin": "^3.4.2"
   },

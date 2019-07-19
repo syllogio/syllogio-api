@@ -10,6 +10,7 @@
     "start": "node ./scripts/gremlin.js start",
     "stop": "node ./scripts/gremlin.js stop",
     "build": "tsc --declaration",
+    "watch": "tsc -w",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
     "lint": "yarn tslint ; yarn prettier",
@@ -19,6 +20,7 @@
     "gremlin": "^3.4.2"
   },
   "devDependencies": {
+    "@types/gremlin": "^3.4.1",
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",

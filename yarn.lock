@@ -318,6 +318,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/gremlin@^3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@types/gremlin/-/gremlin-3.4.1.tgz#06b63cc3463bd413df2580d66a8b42359d0e926b"
+  integrity sha512-63yRzBSewftIGm0hx1q6GVo/16u1I5A3U428W9rr8FLEa1058s7REaagoA9HxSfYg/0vLHz6ZmAqoAaz5bMn/Q==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"

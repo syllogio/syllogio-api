@@ -8,12 +8,20 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./scripts/gremlin.js start",
-    "stop": "node ./scripts/gremlin.js stop"
+    "stop": "node ./scripts/gremlin.js stop",
+    "build": "tsc --declaration",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "prettier": "prettier --write \"**/*.{js,ts}\"",
+    "lint": "yarn tslint ; yarn prettier"
   },
   "dependencies": {
     "gremlin": "^3.4.2"
   },
   "devDependencies": {
+    "prettier": "^1.18.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
     "typescript": "^3.5.3"
   }
 }

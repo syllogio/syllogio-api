@@ -12,13 +12,16 @@
     "build": "tsc --declaration",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
-    "lint": "yarn tslint ; yarn prettier"
+    "lint": "yarn tslint ; yarn prettier",
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit --coverage --verbose"
   },
   "dependencies": {
     "gremlin": "^3.4.2"
   },
   "devDependencies": {
+    "jest": "^24.8.0",
     "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",

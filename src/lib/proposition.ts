@@ -90,32 +90,36 @@ export function addSupportedBy(
   return g;
 }
 
-export async function deleteProposition(id: INewProposition): Promise<void> {
+export async function deleteProposition(id: number): Promise<void> {
   await getTraversal()
     .V(id)
     .drop()
     .next();
 }
 
-export async function getProposition(id: string): Promise<IProposition> {
-  return mapToProposition(
-    (await getTraversal()
-      .V(id)
-      .project('id', 'text', 'supports', 'supportedBy')
-      .by(__.id())
-      .by(__.values('text'))
-      .by(
-        __.out('supports')
-          .id()
-          .fold()
-      )
-      .by(
-        __.in_('supports')
-          .id()
-          .fold()
-      )
-      .next()).value
-  );
+export async function getProposition(id: number): Promise<IProposition | void> {
+  const propMap = (await getTraversal()
+    .V(id)
+    .project('id', 'text', 'supports', 'supportedBy')
+    .by(__.id())
+    .by(__.values('text'))
+    .by(
+      __.out('supports')
+        .id()
+        .fold()
+    )
+    .by(
+      __.in_('supports')
+        .id()
+        .fold()
+    )
+    .next()).value;
+
+  if (!propMap) {
+    return undefined;
+  }
+
+  return mapToProposition(propMap);
 }
 
 export async function listPropositions(): Promise<IProposition[]> {
@@ -135,5 +139,5 @@ export async function listPropositions(): Promise<IProposition[]> {
         .id()
         .fold()
     )
-    .next()).value.map(mapToProposition);
+    .toList()).map(mapToProposition);
 }

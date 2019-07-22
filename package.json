@@ -14,7 +14,8 @@
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
     "lint": "yarn prettier ; yarn tslint",
-    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit --coverage --verbose"
+    "jest": "NODE_ENV=test jest --detectOpenHandles --forceExit --coverage --verbose",
+    "test": "yarn stop ; yarn start ; sleep 5 ; yarn jest ; yarn stop"
   },
   "dependencies": {
     "gremlin": "^3.4.2"

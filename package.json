@@ -13,7 +13,7 @@
     "watch": "tsc -w",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
-    "lint": "yarn tslint ; yarn prettier",
+    "lint": "yarn prettier ; yarn tslint",
     "test": "NODE_ENV=test jest --detectOpenHandles --forceExit --coverage --verbose"
   },
   "dependencies": {

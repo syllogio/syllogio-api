@@ -18,28 +18,16 @@ const __ = gremlin.process.statics;
 export async function createProposition(
   input: INewProposition
 ): Promise<IProposition> {
-  let g = getTraversal();
-  g = g
-    .addV('proposition')
-    .as('prop')
-    .property('text', input.text);
-
-  if (input.supports.length) {
-    g = g
-      .V(...input.supports)
-      .as('s')
-      .addE('supports')
-      .from_('prop')
-      .to('s');
-  }
-  if (input.supportedBy.length) {
-    g = g
-      .V(...input.supportedBy)
-      .as('sb')
-      .addE('supports')
-      .from_('sb')
-      .to('prop');
-  }
+  const g = addSupportedBy(
+    input,
+    addSupports(
+      input,
+      getTraversal()
+        .addV('proposition')
+        .as('prop')
+        .property('text', input.text)
+    )
+  );
 
   return (await g
     .select('prop')
@@ -57,6 +45,36 @@ export async function createProposition(
         .fold()
     )
     .next()).value;
+}
+
+function addSupports(
+  input: INewProposition,
+  g: gremlin.process.GraphTraversal
+): gremlin.process.GraphTraversal {
+  if (input.supports.length) {
+    return g
+      .V(...input.supports)
+      .as('s')
+      .addE('supports')
+      .from_('prop')
+      .to('s');
+  }
+  return g;
+}
+
+function addSupportedBy(
+  input: INewProposition,
+  g: gremlin.process.GraphTraversal
+): gremlin.process.GraphTraversal {
+  if (input.supportedBy.length) {
+    return g
+      .V(...input.supportedBy)
+      .as('sb')
+      .addE('supports')
+      .from_('sb')
+      .to('prop');
+  }
+  return g;
 }
 
 export async function deleteProposition(id: INewProposition): Promise<void> {

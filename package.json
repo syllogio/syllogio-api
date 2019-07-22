@@ -8,12 +8,25 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./scripts/gremlin.js start",
-    "stop": "node ./scripts/gremlin.js stop"
+    "stop": "node ./scripts/gremlin.js stop",
+    "build": "tsc --declaration",
+    "watch": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "prettier": "prettier --write \"**/*.{js,ts}\"",
+    "lint": "yarn prettier ; yarn tslint",
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit --coverage --verbose"
   },
   "dependencies": {
     "gremlin": "^3.4.2"
   },
   "devDependencies": {
+    "@types/gremlin": "^3.4.1",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
     "typescript": "^3.5.3"
   }
 }

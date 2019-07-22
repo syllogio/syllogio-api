@@ -8,7 +8,7 @@ const { execSync } = require('child_process');
 const log = (method = 'log', ...args) => {
   const func = typeof console[method] === 'function' ? method : 'log';
   console[func](...args);
-}
+};
 
 /**
  * Helper that determines whether or not gremlin has been initialized.
@@ -17,12 +17,11 @@ const log = (method = 'log', ...args) => {
  *
  * @returns {boolean} - Boolean indicating whether or not gremlin has been initialized.
  */
-const isInitialized = (container) => {
+const isInitialized = container => {
   let output;
   try {
     output = !!execSync(`docker inspect -f '{{.Id}}' ${container}`);
-  }
-  catch {
+  } catch {
     output = false;
   }
 
@@ -41,13 +40,20 @@ const gremlin = (action, container) => {
   const validActions = ['start', 'stop'];
 
   if (!action || !validActions.includes(action)) {
-    throw new Error('Invalid command. You must pass either "start" or "stop" to this script.');
+    throw new Error(
+      'Invalid command. You must pass either "start" or "stop" to this script.'
+    );
   }
 
   if (action === 'start') {
     if (!isInitialized(container)) {
-      log('info', `Docker container ${container} has not yet been initialized. Starting initialization now...`);
-      execSync(`docker run -d -p 3182:8182 --name ${container} tinkerpop/gremlin-server`);
+      log(
+        'info',
+        `Docker container ${container} has not yet been initialized. Starting initialization now...`
+      );
+      execSync(
+        `docker run -d -p 3182:8182 --name ${container} tinkerpop/gremlin-server`
+      );
     }
 
     log('info', `Starting Docker container ${container}`);
@@ -58,6 +64,6 @@ const gremlin = (action, container) => {
     log('info', `Stopping Docker container ${container}`);
     execSync(`docker container stop ${container}`);
   }
-}
+};
 
 gremlin(process.argv[2], 'syllogio_gremlin');

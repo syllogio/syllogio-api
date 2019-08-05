@@ -24,4 +24,6 @@ module.exports = {
   },
   testMatch: ['<rootDir>/src/**/*.test.(ts|js)'],
   testEnvironment: 'node',
+  globalSetup: './jest.setup.js',
+  globalTeardown: './jest.teardown.js',
 };

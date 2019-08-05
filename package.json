@@ -7,15 +7,15 @@
   "author": "Peter Sieg <chasingmaxwell@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node ./scripts/gremlin.js start",
+    "start": "GREMLIN_PORT=3182 node ./scripts/gremlin.js start",
     "stop": "node ./scripts/gremlin.js stop",
     "build": "tsc --declaration",
     "watch": "tsc -w",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
     "lint": "yarn prettier ; yarn tslint",
-    "jest": "NODE_ENV=test jest --detectOpenHandles --forceExit --coverage --verbose",
-    "test": "yarn stop ; yarn start ; sleep 5 ; yarn jest ; yarn stop"
+    "jest": "GREMLIN_PORT=3183 NODE_ENV=test jest --detectOpenHandles --forceExit --coverage --verbose",
+    "test": "yarn jest"
   },
   "dependencies": {
     "gremlin": "^3.4.2"
@@ -24,6 +24,7 @@
     "@types/gremlin": "^3.4.1",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.8",
+    "got": "^9.6.0",
     "husky": "^3.0.1",
     "jest": "^24.8.0",
     "prettier": "^1.18.2",

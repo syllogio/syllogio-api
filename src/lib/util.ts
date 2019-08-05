@@ -4,6 +4,9 @@ const DriverRemoteConnection = gremlin.driver.DriverRemoteConnection;
 
 export function getTraversal() {
   return traversal().withRemote(
-    new DriverRemoteConnection('ws://localhost:3182/gremlin', {})
+    new DriverRemoteConnection(
+      `ws://localhost:${process.env.GREMLIN_PORT}/gremlin`,
+      {}
+    )
   );
 }

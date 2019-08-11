@@ -1,5 +1,26 @@
 language: node_js
-node_js:
-  - 10.13
-  - 11
-  - 12
+jobs:
+  include:
+    - stage: test
+      script:
+        - yarn lint
+        - yarn test
+      node_js: 10.13
+    - stage: test
+      script:
+        - yarn lint
+        - yarn test
+      node_js: 11
+    - stage: test
+      script:
+        - yarn lint
+        - yarn test
+      node_js: 12
+    - stage: release
+      node_js: 12
+      script: yarn semantic-release
+stages:
+  - test
+  - name: release
+    if: branch = master AND fork = false AND type in (push, api)
+

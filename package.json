@@ -18,7 +18,7 @@
     "test": "yarn jest"
   },
   "dependencies": {
-    "gremlin": "^3.4.2"
+    "gremlin": "^3.4.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",

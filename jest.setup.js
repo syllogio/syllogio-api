@@ -35,7 +35,9 @@ const waitForGremlin = async () => {
  * it to be ready before tests begin.
  */
 module.exports = async () => {
-  await gremlin.stop(CONTAINER_NAME);
+  try {
+    await gremlin.stop(CONTAINER_NAME);
+  } catch (e) {}
   await gremlin.start(CONTAINER_NAME, process.env.GREMLIN_PORT);
   await waitForGremlin();
 };

@@ -1,0 +1,6 @@
+"""
+Defines entry points for all available queries.
+"""
+type Query {
+  getProposition(id: String!): Proposition
+}

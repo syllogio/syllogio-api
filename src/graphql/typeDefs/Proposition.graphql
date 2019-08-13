@@ -1,0 +1,20 @@
+"""
+Describes a proposition.
+"""
+type Proposition {
+  """
+  Unique identifier that represents this proposition.
+  """
+  """
+  Unique identifier of another proposition by which this proposition is supported.
+  """
+  supports: String
+  """
+  Unique identifier of another proposition that supports this proposition.
+  """
+  supportedBy: String
+  """
+  Notes associated with this proposition.
+  """
+  text: String
+}

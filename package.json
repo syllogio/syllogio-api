@@ -18,6 +18,8 @@
     "test": "yarn jest"
   },
   "dependencies": {
+    "apollo-server-express": "^2.8.1",
+    "express": "^4.17.1",
     "gremlin": "^3.4.3"
   },
   "devDependencies": {

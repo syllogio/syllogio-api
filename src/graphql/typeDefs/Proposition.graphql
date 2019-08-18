@@ -5,7 +5,7 @@ type Proposition {
   """
   Unique identifier that represents this proposition.
   """
-  id: String!
+  id: Int!
   """
   The text containing the proposition itself.
   """
@@ -14,10 +14,10 @@ type Proposition {
   Unique identifier of other propositions which are supported by this
   proposition.
   """
-  supports: [String]!
+  supports: [Int]!
   """
   Unique identifier of other propositions by which this proposition is
   supported.
   """
-  supportedBy: [String]!
+  supportedBy: [Int]!
 }

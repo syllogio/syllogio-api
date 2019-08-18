@@ -1,3 +1,7 @@
+import proposition from './proposition';
+
 export default {
-  Proposition: () => 'Hallo mein Freund',
+  Query: {
+    proposition,
+  },
 };

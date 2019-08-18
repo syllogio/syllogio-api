@@ -5,5 +5,5 @@ type Query {
   """
   Get a proposition by its identifier.
   """
-  getProposition(id: String!): Proposition
+  proposition(id: Int!): Proposition
 }

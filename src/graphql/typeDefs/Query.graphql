@@ -2,5 +2,8 @@
 Defines entry points for all available queries.
 """
 type Query {
+  """
+  Get a proposition by its identifier.
+  """
   getProposition(id: String!): Proposition
 }

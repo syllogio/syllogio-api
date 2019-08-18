@@ -5,16 +5,19 @@ type Proposition {
   """
   Unique identifier that represents this proposition.
   """
+  id: String!
   """
-  Unique identifier of another proposition by which this proposition is supported.
+  The text containing the proposition itself.
   """
-  supports: String
+  text: String!
   """
-  Unique identifier of another proposition that supports this proposition.
+  Unique identifier of other propositions which are supported by this
+  proposition.
   """
-  supportedBy: String
+  supports: [String]!
   """
-  Notes associated with this proposition.
+  Unique identifier of other propositions by which this proposition is
+  supported.
   """
-  text: String
+  supportedBy: [String]!
 }

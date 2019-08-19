@@ -1,9 +1,10 @@
 import { GraphQLSchema } from 'graphql';
-import { importSchema } from 'graphql-import';
 import { makeExecutableSchema } from 'graphql-tools';
+
+import typeDefs from '../typeDefs';
 
 export default async function getExecutableSchema(): Promise<GraphQLSchema> {
   return makeExecutableSchema({
-    typeDefs: importSchema('../../graphql/typeDefs/Query.graphql'),
+    typeDefs,
   });
 }

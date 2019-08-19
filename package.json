@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "GREMLIN_PORT=3182 node ./scripts/gremlin.js start",
-    "graphql": "yarn build ; node ./dist/handlers/express.js",
+    "graphql": "yarn build ; node ./dist/server.js",
     "stop": "node ./scripts/gremlin.js stop",
     "copyTypeDefs": "cp ./src/graphql/typeDefs/*.graphql ./dist/graphql/typeDefs/",
     "build": "tsc --declaration ; yarn copyTypeDefs",

@@ -1,7 +1,7 @@
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
 
-import getExecutableSchema from './util/getExecutableSchema';
+import getExecutableSchema from './graphql/util/getExecutableSchema';
 
 async function start() {
   const schema = await getExecutableSchema();

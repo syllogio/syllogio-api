@@ -11,11 +11,14 @@ async function start() {
   });
 
   server.applyMiddleware({ app });
-  app.listen({ port: 3002 }, () => {
+  const port = 3002;
+  app.listen({ port }, () => {
+    /* tslint:disable no-console */
     console.info(
-      `🚀 Apollo server available at {host}:4000/${server.graphqlPath}`
+      `🚀 Apollo server available at {host}:${port}${server.graphqlPath}`
     );
   });
 }
 
+/* tslint:disable no-floating-promises */
 start();

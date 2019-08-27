@@ -7,16 +7,17 @@
   "author": "Peter Sieg <chasingmaxwell@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "GREMLIN_PORT=3182 node ./scripts/gremlin.js start",
-    "graphql": "yarn build ; node ./dist/server.js",
-    "stop": "node ./scripts/gremlin.js stop",
+    "start": "yarn gremlin-start ; yarn build ; yarn apollo-start",
+    "gremlin-start": "GREMLIN_PORT=3182 node ./scripts/gremlin.js start",
+    "gremlin-stop": "node ./scripts/gremlin.js stop",
+    "apollo-start": "yarn build ; node ./dist/server.js",
     "copyTypeDefs": "cp ./src/graphql/typeDefs/*.graphql ./dist/graphql/typeDefs/",
     "build": "tsc --declaration ; yarn copyTypeDefs",
-    "watch": "nodemon --watch src --ext ts --exec \"yarn build ; node ./dist/server.js\"",
+    "watch": "nodemon --watch src --ext ts --exec \"yarn start\"",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
     "lint": "yarn prettier ; yarn tslint",
-    "jest": "GREMLIN_PORT=3183 NODE_ENV=test jest --detectOpenHandles --forceExit --coverage --verbose",
+    "jest": "GREMLIN_PORT=3183 NODE_ENV=test jest --forceExit --coverage --verbose",
     "test": "yarn jest"
   },
   "dependencies": {

@@ -12,10 +12,11 @@ async function start() {
 
   server.applyMiddleware({ app });
   const port = 3002;
+  const host = 'localhost';
   app.listen({ port }, () => {
     /* tslint:disable no-console */
     console.info(
-      `🚀 Apollo server available at {host}:${port}${server.graphqlPath}`
+      `🚀 Apollo server available at ${host}:${port}${server.graphqlPath}`
     );
   });
 }

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`typeDefs exports the GraphQL schema 1`] = `
+"\\"\\"\\"Defines entry points for all available queries.\\"\\"\\"
+type Query {
+  \\"\\"\\"Get a proposition by its identifier.\\"\\"\\"
+  proposition(id: Int!): Proposition
+}
+
+\\"\\"\\"Describes a proposition.\\"\\"\\"
+type Proposition {
+  \\"\\"\\"Unique identifier that represents this proposition.\\"\\"\\"
+  id: Int!
+  \\"\\"\\"The text containing the proposition itself.\\"\\"\\"
+  text: String!
+  \\"\\"\\"
+  Unique identifier of other propositions which are supported by this
+  proposition.
+  \\"\\"\\"
+  supports: [Int]!
+  \\"\\"\\"
+  Unique identifier of other propositions by which this proposition is
+  supported.
+  \\"\\"\\"
+  supportedBy: [Int]!
+}
+"
+`;

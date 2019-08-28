@@ -1,0 +1,23 @@
+"""
+Describes a proposition.
+"""
+type Proposition {
+  """
+  Unique identifier that represents this proposition.
+  """
+  id: Int!
+  """
+  The text containing the proposition itself.
+  """
+  text: String!
+  """
+  Unique identifier of other propositions which are supported by this
+  proposition.
+  """
+  supports: [Int]!
+  """
+  Unique identifier of other propositions by which this proposition is
+  supported.
+  """
+  supportedBy: [Int]!
+}

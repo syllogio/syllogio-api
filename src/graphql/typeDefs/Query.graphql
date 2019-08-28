@@ -1,0 +1,11 @@
+# import Proposition from 'Proposition.graphql'
+
+"""
+Defines entry points for all available queries.
+"""
+type Query {
+  """
+  Get a proposition by its identifier.
+  """
+  proposition(id: Int!): Proposition
+}

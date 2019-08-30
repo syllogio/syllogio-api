@@ -6,6 +6,8 @@ describe('resolvers', () => {
       Object {
         "Mutation": Object {
           "createProposition": [Function],
+          "setSupportedBy": [Function],
+          "setSupports": [Function],
         },
         "Proposition": Object {
           "supportedBy": [Function],

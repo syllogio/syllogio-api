@@ -3,8 +3,6 @@ import {
   setSupportedBy as _setSupportedBy,
 } from '../../lib/proposition';
 
-import { isEmpty } from 'ramda';
-
 /**
  * GraphQL resolver that allows for supportedBys to be mutated.
  */

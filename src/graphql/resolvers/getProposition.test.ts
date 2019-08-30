@@ -1,10 +1,13 @@
-import { getProposition, IProposition } from '../../lib/proposition';
-import proposition from './proposition';
+import {
+  getProposition as _getProposition,
+  IProposition,
+} from '../../lib/proposition';
+import getProposition from './getProposition';
 jest.mock('../../lib/proposition', () => ({
   getProposition: jest.fn(),
 }));
 
-(getProposition as jest.Mock<any>).mockImplementation(
+(_getProposition as jest.Mock<any>).mockImplementation(
   async (id: number): Promise<IProposition | void> => ({
     id,
     supportedBy: [],
@@ -16,12 +19,12 @@ jest.mock('../../lib/proposition', () => ({
 describe('proposition', () => {
   it('gets a proposition by an id in arguments', async () => {
     expect.assertions(2);
-    await expect(proposition({}, { id: 1 })).resolves.toEqual({
+    await expect(getProposition({}, { id: 1 })).resolves.toEqual({
       id: 1,
       supportedBy: [],
       supports: [],
       text: 'All men are mortal',
     });
-    expect(getProposition).toHaveBeenCalledWith(1);
+    expect(_getProposition).toHaveBeenCalledWith(1);
   });
 });

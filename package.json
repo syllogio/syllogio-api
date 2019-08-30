@@ -17,7 +17,7 @@
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
     "lint": "yarn prettier ; yarn tslint",
-    "jest": "GREMLIN_PORT=3183 NODE_ENV=test jest --forceExit --coverage --verbose",
+    "jest": "GREMLIN_PORT=3183 NODE_ENV=test jest --coverage --verbose",
     "test": "yarn jest"
   },
   "dependencies": {

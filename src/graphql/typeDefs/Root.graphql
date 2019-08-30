@@ -9,3 +9,14 @@ type Query {
   """
   proposition(id: Int!): Proposition
 }
+
+type Mutation {
+  """
+  Create a proposition.
+  """
+  createProposition(
+    text: String!
+    supports: [Int!]
+    supportedBy: [Int!]
+  ): Proposition
+}

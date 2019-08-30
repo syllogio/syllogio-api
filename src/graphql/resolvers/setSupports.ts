@@ -1,7 +1,4 @@
-import {
-  IProposition,
-  setSupports as _setSupports,
-} from '../../lib/proposition';
+import { setSupports as _setSupports } from '../../lib/proposition';
 
 /**
  * GraphQL resolver that allows for supports to be mutated.

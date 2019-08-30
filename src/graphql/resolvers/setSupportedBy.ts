@@ -1,7 +1,4 @@
-import {
-  IProposition,
-  setSupportedBy as _setSupportedBy,
-} from '../../lib/proposition';
+import { setSupportedBy as _setSupportedBy } from '../../lib/proposition';
 
 /**
  * GraphQL resolver that allows for supportedBys to be mutated.

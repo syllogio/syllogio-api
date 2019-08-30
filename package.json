@@ -10,7 +10,7 @@
     "start": "yarn gremlin-start ; yarn build ; yarn apollo-start",
     "gremlin-start": "GREMLIN_PORT=3182 node ./scripts/gremlin.js start",
     "gremlin-stop": "node ./scripts/gremlin.js stop",
-    "apollo-start": "yarn build ; node ./dist/server.js",
+    "apollo-start": "yarn build ; GREMLIN_PORT=3182 node ./dist/server.js",
     "copyTypeDefs": "cp ./src/graphql/typeDefs/*.graphql ./dist/graphql/typeDefs/",
     "build": "tsc --declaration ; yarn copyTypeDefs",
     "watch": "nodemon --watch src --ext ts --exec \"yarn start\"",

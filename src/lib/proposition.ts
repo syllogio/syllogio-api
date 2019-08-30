@@ -1,7 +1,7 @@
 import gremlin from 'gremlin';
 import { getTraversal } from './util';
 
-interface INewProposition {
+export interface INewProposition {
   text: string;
   supports: number[];
   supportedBy: number[];

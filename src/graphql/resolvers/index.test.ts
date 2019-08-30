@@ -7,6 +7,10 @@ describe('resolvers', () => {
         "Mutation": Object {
           "createProposition": [Function],
         },
+        "Proposition": Object {
+          "supportedBy": [Function],
+          "supports": [Function],
+        },
         "Query": Object {
           "proposition": [Function],
         },

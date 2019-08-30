@@ -22,12 +22,12 @@ type Proposition {
   Unique identifier of other propositions which are supported by this
   proposition.
   \\"\\"\\"
-  supports: [Int]!
+  supports: [Proposition]!
   \\"\\"\\"
   Unique identifier of other propositions by which this proposition is
   supported.
   \\"\\"\\"
-  supportedBy: [Int]!
+  supportedBy: [Proposition]!
 }
 "
 `;

@@ -19,4 +19,7 @@ type Mutation {
     supports: [Int!]
     supportedBy: [Int!]
   ): Proposition
+
+  setSupports(propositionId: Int!, supports: [Int!]): Boolean
+  setSupportedBy(propositionId: Int!, supportedBy: [Int!]): Boolean
 }

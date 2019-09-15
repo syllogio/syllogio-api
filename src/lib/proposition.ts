@@ -90,6 +90,40 @@ export function addSupportedBy(
   return g;
 }
 
+export async function setSupportedBy(
+  proposition: number,
+  supportedBy: number[]
+): Promise<undefined> {
+  await getTraversal()
+    .V(proposition)
+    .as('prop')
+    .V(...supportedBy)
+    .as('sb')
+    .addE('supports')
+    .from_('sb')
+    .to('prop')
+    .next();
+
+  return undefined;
+}
+
+export async function setSupports(
+  proposition: number,
+  supports: number[]
+): Promise<undefined> {
+  await getTraversal()
+    .V(proposition)
+    .as('prop')
+    .V(...supports)
+    .as('s')
+    .addE('supports')
+    .from_('prop')
+    .to('s')
+    .next();
+
+  return undefined;
+}
+
 export async function deleteProposition(id: number): Promise<void> {
   await getTraversal()
     .V(id)

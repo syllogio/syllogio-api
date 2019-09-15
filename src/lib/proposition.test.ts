@@ -3,6 +3,8 @@ import {
   deleteProposition,
   getProposition,
   listPropositions,
+  setSupportedBy,
+  setSupports,
 } from './proposition';
 
 describe('createProposition', () => {
@@ -131,6 +133,60 @@ describe('listPropositions', () => {
         { ...prop2, supports: [prop3.id] },
         prop3,
       ])
+    );
+  });
+});
+describe('setSupportedBy', () => {
+  it('creates a supportedBy edge', async () => {
+    expect.assertions(2);
+    const prop1 = await createProposition({
+      supportedBy: [],
+      supports: [],
+      text: 'All greeks are mortal',
+    });
+    const prop2 = await createProposition({
+      supportedBy: [],
+      supports: [],
+      text: 'All men are mortal',
+    });
+
+    await setSupportedBy(prop1.id, [prop2.id]);
+    await expect(getProposition(prop1.id)).resolves.toEqual(
+      expect.objectContaining({
+        supportedBy: [prop2.id],
+      })
+    );
+    await expect(getProposition(prop2.id)).resolves.toEqual(
+      expect.objectContaining({
+        supports: [prop1.id],
+      })
+    );
+  });
+});
+describe('setSupports', () => {
+  it('creates a supports edge', async () => {
+    expect.assertions(2);
+    const prop1 = await createProposition({
+      supportedBy: [],
+      supports: [],
+      text: 'All men are mortal',
+    });
+    const prop2 = await createProposition({
+      supportedBy: [],
+      supports: [],
+      text: 'All greeks are mortal',
+    });
+
+    await setSupports(prop1.id, [prop2.id]);
+    await expect(getProposition(prop1.id)).resolves.toEqual(
+      expect.objectContaining({
+        supports: [prop2.id],
+      })
+    );
+    await expect(getProposition(prop2.id)).resolves.toEqual(
+      expect.objectContaining({
+        supportedBy: [prop1.id],
+      })
     );
   });
 });

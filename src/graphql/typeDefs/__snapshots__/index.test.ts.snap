@@ -10,6 +10,8 @@ type Query {
 type Mutation {
   \\"\\"\\"Create a proposition.\\"\\"\\"
   createProposition(text: String!, supports: [Int!], supportedBy: [Int!]): Proposition
+  setSupports(propositionId: Int!, supports: [Int!]): Boolean
+  setSupportedBy(propositionId: Int!, supportedBy: [Int!]): Boolean
 }
 
 \\"\\"\\"Describes a proposition.\\"\\"\\"

@@ -1,5 +1,6 @@
 import createProposition from './createProposition';
 import proposition from './getProposition';
+import propositions from './listPropositions';
 import Proposition from './Proposition';
 import setSupportedBy from './setSupportedBy';
 import setSupports from './setSupports';
@@ -13,5 +14,6 @@ export default {
   Proposition,
   Query: {
     proposition,
+    propositions,
   },
 };

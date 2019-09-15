@@ -138,7 +138,7 @@ describe('listPropositions', () => {
 });
 describe('setSupportedBy', () => {
   it('creates a supportedBy edge', async () => {
-    expect.assertions(1);
+    expect.assertions(2);
     const prop1 = await createProposition({
       supportedBy: [],
       supports: [],
@@ -156,11 +156,16 @@ describe('setSupportedBy', () => {
         supportedBy: [prop2.id],
       })
     );
+    await expect(getProposition(prop2.id)).resolves.toEqual(
+      expect.objectContaining({
+        supports: [prop1.id],
+      })
+    );
   });
 });
 describe('setSupports', () => {
   it('creates a supports edge', async () => {
-    expect.assertions(1);
+    expect.assertions(2);
     const prop1 = await createProposition({
       supportedBy: [],
       supports: [],
@@ -176,6 +181,11 @@ describe('setSupports', () => {
     await expect(getProposition(prop1.id)).resolves.toEqual(
       expect.objectContaining({
         supports: [prop2.id],
+      })
+    );
+    await expect(getProposition(prop2.id)).resolves.toEqual(
+      expect.objectContaining({
+        supportedBy: [prop1.id],
       })
     );
   });

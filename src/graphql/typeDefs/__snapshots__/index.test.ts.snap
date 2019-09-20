@@ -5,6 +5,7 @@ exports[`typeDefs exports the GraphQL schema 1`] = `
 type Query {
   \\"\\"\\"Get a proposition by its identifier.\\"\\"\\"
   proposition(id: Int!): Proposition
+  propositions: [Proposition]
 }
 
 type Mutation {

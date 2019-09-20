@@ -15,6 +15,7 @@ describe('resolvers', () => {
         },
         "Query": Object {
           "proposition": [Function],
+          "propositions": [Function],
         },
       }
     `);

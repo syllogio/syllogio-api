@@ -31,7 +31,7 @@
     "ramda": "^0.26.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
+    "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@types/fs-extra": "^8.0.0",
     "@types/graphql": "^14.2.3",

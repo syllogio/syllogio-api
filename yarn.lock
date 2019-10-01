@@ -884,12 +884,12 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
-"@types/ramda@^0.26.22":
-  version "0.26.22"
-  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.26.22.tgz#4506cf76b53191d17fce473bc3de529ece6f4886"
-  integrity sha512-TfX4BwgjMSXFuyb1QZsY2D8KEsJfiWolzJHYzFWyB/0UGiyX6BFvWX05IzzrMAsZpB4uN0GXAL5QcJHTKnBxoQ==
+"@types/ramda@^0.26.26":
+  version "0.26.26"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.26.26.tgz#cf5c2fa9bfbae8f81be7dfaa19e08d31452f5e4b"
+  integrity sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
   dependencies:
-    ts-toolbelt "^3.8.75"
+    ts-toolbelt "^4.7.7"
 
 "@types/range-parser@*":
   version "1.2.3"
@@ -7882,10 +7882,10 @@ ts-jest@^24.1.0:
     semver "^5.5"
     yargs-parser "10.x"
 
-ts-toolbelt@^3.8.75:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-3.11.0.tgz#5e8eb060a45cfad95eb0f6f3538cee136209f70e"
-  integrity sha512-OJ+baLKTSsXgao7weQdjbGIAEjriPWKy63zZQhRNvtslYA4igN8gHn/6B71NQlSzB0Lt0/tolJfaL6Dc38cESw==
+ts-toolbelt@^4.7.7:
+  version "4.7.19"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-4.7.19.tgz#98d2a7f731182e7d9cca90183472736e4c659445"
+  integrity sha512-qIqDUMilFyqyVftvpsgIvQ1wI6uAfZ1XPidQjnHK1sRw3hJqzAkEZplEnKJuatuB8bkuJ+eVpbgXwKTvct0kWA==
 
 tslib@1.9.0:
   version "1.9.0"
